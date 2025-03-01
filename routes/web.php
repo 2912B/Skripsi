@@ -9,58 +9,55 @@ use App\Http\Controllers\ResetPasswordController;
 use Illuminate\Support\Facades\Route;
 
 
-// Routes for skripsi.test
-Route::domain('skripsi.test')->group(function () {
-    // Dashboard Pages
-    Route::get('/', function () {
-        return view('dashboardpages.home');
-    })->name('home');
+// Dashboard Pages
+Route::get('/', function () {
+    return view('dashboardpages.home');
+})->name('home');
 
-    Route::get('/games', function () {
-        return view('dashboardpages.games');
-    });
+Route::get('/games', function () {
+    return view('dashboardpages.games');
+});
 
-    Route::get('/simulation', function () {
-        return view('dashboardpages.simulation');
-    });
+Route::get('/simulation', function () {
+    return view('dashboardpages.simulation');
+});
 
-    Route::get('/assessment', function () {
-        return view('dashboardpages.assessment');
-    })->name('assessment');
+Route::get('/assessment', function () {
+    return view('dashboardpages.assessment');
+})->name('assessment');
 
-    // Profile Menu
-    Route::get('/profile', [ProfileController::class, 'showProfile'])->name('profile');
-    Route::post('/profile/update-username', [ProfileController::class, 'updateUsername'])->name('profile.updateUsername');
-    Route::post('/profile/update-password', [ProfileController::class, 'updatePassword'])->name('profile.updatePassword');
+// Profile Menu
+Route::get('/profile', [ProfileController::class, 'showProfile'])->name('profile');
+Route::post('/profile/update-username', [ProfileController::class, 'updateUsername'])->name('profile.updateUsername');
+Route::post('/profile/update-password', [ProfileController::class, 'updatePassword'])->name('profile.updatePassword');
 
-    // Login and Registration Pages
-    Route::get('/loginregis', [AuthController::class, 'showloginregis'])->name('login');
-    Route::post('/loginregis', [AuthController::class, 'loginOrRegister'])->name('loginOrRegister');
+// Login and Registration Pages
+Route::get('/loginregis', [AuthController::class, 'showloginregis'])->name('login');
+Route::post('/loginregis', [AuthController::class, 'loginOrRegister'])->name('loginOrRegister');
 
 
-    Route::middleware('auth')->group(function () {
-        // Logout
-        Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::middleware('auth')->group(function () {
+    // Logout
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-        // Email Verification Notice route
-        Route::get('/email/verify', [AuthController::class, 'verifyEmailNotice'])->name('verification.notice');
+    // Email Verification Notice route
+    Route::get('/email/verify', [AuthController::class, 'verifyEmailNotice'])->name('verification.notice');
 
-        // Email Verification Handler route
-        Route::get('/email/verify/{id}/{hash}', [AuthController::class, 'verifyEmailHandler'])->middleware('signed')->name('verification.verify');
+    // Email Verification Handler route
+    Route::get('/email/verify/{id}/{hash}', [AuthController::class, 'verifyEmailHandler'])->middleware('signed')->name('verification.verify');
 
-        // Resending the Verification Email route
-        Route::post('/email/verification-notification', [AuthController::class, 'verifyEmailResend'])->middleware('throttle:6,30')->name('verification.send');
-    });
+    // Resending the Verification Email route
+    Route::post('/email/verification-notification', [AuthController::class, 'verifyEmailResend'])->middleware('throttle:6,30')->name('verification.send');
+});
 
-    // Forgot Password
-    Route::middleware('guest')->group(function () {
-        Route::get('/forgetpassword', function () {
-            return view('forgetpass');
-        })->name('password.request');
-        Route::post('/forgetpassword', [ResetPasswordController::class, 'passwordEmail']);
-        Route::get('/reset-password/{token}', [ResetPasswordController::class, 'passwordReset'])->name('password.reset');
-        Route::post('/reset-password', [ResetPasswordController::class, 'passwordUpdate'])->name('password.update');
-    });
+// Forgot Password
+Route::middleware('guest')->group(function () {
+    Route::get('/forgetpassword', function () {
+        return view('forgetpass');
+    })->name('password.request');
+    Route::post('/forgetpassword', [ResetPasswordController::class, 'passwordEmail']);
+    Route::get('/reset-password/{token}', [ResetPasswordController::class, 'passwordReset'])->name('password.reset');
+    Route::post('/reset-password', [ResetPasswordController::class, 'passwordUpdate'])->name('password.update');
 });
 
 require __DIR__.'/admin.php';
