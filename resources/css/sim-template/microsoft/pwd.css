@@ -1,0 +1,197 @@
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("https://upload.wikimedia.org/wikipedia/commons/3/33/Microsoft_login_screen.svg")
+        no-repeat center center fixed;
+    background-size: cover;
+}
+
+.formcontainer {
+    text-align: center;
+    position: flex;
+    z-index: 1;
+}
+
+.container {
+    margin-top: -25px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 40px 35px;
+    width: 440px;
+    height: 340px;
+    text-align: left;
+    box-shadow: 0px 4px 12px rgba(9, 9, 9, 0.2);
+    position: relative;
+    z-index: 1;
+    margin-bottom: 20px;
+}
+
+.logo {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    height: 50px;
+}
+
+.container h1 {
+    margin-top: -18px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin-left: 9px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.container p {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.container .userEmailDisplay {
+    margin-top: 45px;
+    font-size: 15.5px;
+    margin-left: 8px;
+}
+
+.input-field {
+    width: 95%;
+    padding: 10px 0 5px;
+    margin-top: -5px;
+    margin-bottom: 15px;
+    margin-left: 9px;
+    border: none;
+    border-bottom: 1px solid #000000;
+    font-size: 15px;
+    background-color: transparent;
+    color: #222121;
+}
+
+.input-field:focus {
+    outline: none;
+    border-bottom: 1px solid #1556d0;
+}
+
+.input-field:hover {
+    outline: none;
+    border-bottom: 1px solid #000000;
+}
+
+.container a {
+    margin-left: 11px;
+    font-size: 13px;
+    text-decoration: none;
+    color: rgb(0, 99, 220);
+}
+
+.container a:hover {
+    color: #373636;
+    text-decoration: underline;
+}
+
+.button-container {
+    margin-top: 23px;
+    margin-left: 28px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+    width: 90%;
+    margin-bottom: 10px;
+}
+
+.btn-primary {
+    padding: 6px 35px;
+    background-color: #0269b8;
+    color: white;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #005a8d;
+}
+
+.key-container {
+    display: flex;
+    align-items: flex-start;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 7px 20px;
+    width: 440px;
+    box-shadow: 0px 4px 12px rgba(9, 9, 9, 0.2);
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+
+.key-container:hover {
+    background-color: #d2d1d1;
+    text-decoration: none;
+}
+
+.key-container img {
+    width: 8%;
+    color: black;
+    margin-top: 2px;
+    margin-left: 23px;
+    margin-right: 14px;
+}
+
+.footer-text {
+    margin-top: 6px;
+    font-size: 14.5px;
+    color: #000000;
+}
+
+.footer-right {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    font-size: 12px;
+    color: #666;
+}
+
+.footer-right a {
+    margin-right: 15px;
+    color: #000000;
+    text-decoration: none;
+}
+
+.footer-right a:hover {
+    text-decoration: underline;
+}
+
+.footer-right2 {
+    position: fixed;
+    bottom: 5px;
+    right: 8px;
+    font-size: 11px;
+    text-align: right;
+}
+
+.footer-right2 a {
+    color: #0269b8;
+    text-decoration: none;
+}
+
+.footer-right2 a:hover {
+    color: #373636;
+    text-decoration: underline;
+}
+
+.error-message {
+    color: red;
+    font-size: 15px;
+    margin-left: 8px;
+    margin-top: -3px;
+}
+
+.input-field.error {
+    border-bottom: 1px solid rgb(206, 10, 10);
+}

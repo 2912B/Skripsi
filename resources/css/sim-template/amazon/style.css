@@ -1,0 +1,204 @@
+/* General reset and basic styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Arial", sans-serif;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.login-container {
+    background-color: transparent;
+    width: 350px;
+    padding: 20px 25px;
+    border: 1px solid rgba(209, 208, 208, 0.915);
+    border-radius: 10px;
+}
+
+.header {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.header img {
+    width: 100px;
+}
+
+.login-form h1 {
+    font-size: 28px;
+    font-weight: 200;
+    margin-bottom: 10px;
+}
+
+.login-form .place {
+    margin-bottom: 3px;
+    font-weight: 600;
+    font-size: 14px;
+    margin-left: 2px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 4px 7px;
+    font-size: 14px;
+    border: 1px solid #242424;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.continue-button {
+    width: 100%;
+    padding: 5px;
+    background-color: #fedc00;
+    color: black;
+    border: none;
+    border-radius: 30px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.continue-button:hover {
+    background-color: #ffbf00;
+}
+
+.terms {
+    font-size: 12.2px;
+    margin-top: 10px;
+}
+
+.terms a {
+    color: #0d5b9f;
+    text-decoration: underline;
+}
+
+.terms a:hover {
+    color: #c02c07;
+}
+
+.extra-options a {
+    display: inline-block;
+    font-size: 15px;
+    color: #0d5b9f;
+    text-decoration: none;
+    margin: 5px 0;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.extra-options a:hover {
+    color: #c02c07;
+    text-decoration: underline;
+}
+
+.buying-options {
+    border-top: 1px solid rgb(208, 207, 207);
+    padding: 18px 0px 0px;
+    font-size: 13.5px;
+}
+
+.buying-options p {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.buying-options a {
+    font-size: 14px;
+    color: #0d5b9f;
+    text-decoration: none;
+}
+
+.buying-options a:hover {
+    color: #c02c07;
+    text-decoration: underline;
+}
+
+.new-to-amazon {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.new-text {
+    margin-bottom: -12px;
+}
+
+.new-text a {
+    font-weight: 400;
+    font-size: 12px;
+    color: #555;
+    background-color: rgb(255, 255, 255);
+    padding: 3px 8px;
+    border-radius: 20px;
+    pointer-events: none;
+}
+
+.new-account {
+    padding: 3px 0px;
+    background-color: white;
+    border-top: 1px solid rgb(208, 207, 207);
+}
+
+.new-account a {
+    display: inline-block;
+    font-size: 13px;
+    color: #000000;
+    text-decoration: none;
+    padding: 5px 90px;
+    background-color: white;
+    border: 1px solid #000000;
+    border-radius: 20px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.new-account a:hover {
+    background-color: #bdbdbd;
+}
+
+footer {
+    margin-top: 30px;
+    border-top: 0.5px solid rgba(184, 183, 183, 0.915);
+    width: 98%;
+    text-align: center;
+    font-size: 12px;
+    color: #555;
+    padding: 10px;
+}
+
+footer .footer-link {
+    margin-top: 20px;
+    color: #0d5b9f;
+    text-decoration: none;
+    font-size: 12.5px;
+    margin-bottom: 10px;
+}
+
+.footer-link a {
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.footer-link a:hover {
+    color: #c02c07;
+    text-decoration: underline;
+}
+
+.error-text {
+    color: #c02c07;
+    font-size: 12px;
+    margin: 0px 5px 10px;
+    font-weight: 600;
+}
+
+input:invalid {
+    border-color: #c02c07;
+}

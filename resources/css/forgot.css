@@ -1,0 +1,120 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: black;
+    color: #ddd;
+    font-family: sans-serif;
+}
+
+.main-content {
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    background: #1a2a3c;
+    color: #eee;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+}
+
+#main-content canvas {
+    background: transparent !important;
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 3em;
+    color: #81d4fa;
+    font-weight: bold;
+}
+
+.container {
+    background-color: rgba(44, 43, 43, 0.3);
+    padding: 30px;
+    border-radius: 6px;
+    border: solid 1px white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    color: #5fe9fe;
+    text-shadow: 0 0 5px #5fe9fe;
+    margin-bottom: 10px;
+    font-size: 40px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 15px;
+    color: #52e755;
+    text-shadow: 0 0 2px #52e755;
+    font-size: 18px;
+}
+
+input[type="email"] {
+    width: calc(100%);
+    padding: 8px;
+    border: 1px solid #5fe9fe;
+    border-radius: 3px;
+    background-color: #444;
+    color: #ccc;
+    outline: none;
+    box-shadow: 0 0 2px #5fe9fe;
+}
+
+.neon-button {
+    background-color: #52e755;
+    color: #222;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: 500;
+    text-transform: none;
+    box-shadow: 0 0 5px #52e755;
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.neon-button:hover {
+    background-color: #52e755;
+    box-shadow: 0 0 8px #52e755;
+}
+
+.message {
+    margin-top: 15px;
+    color: #5fe9fe;
+    text-shadow: 0 0 2px #5fe9fe;
+    margin-bottom: 15px;
+}
+
+.message.success {
+    color: #52e755;
+    text-shadow: 0 0 2px #52e755;
+}
+
+.message.error {
+    color: #ef9a9a;
+    text-shadow: 0 0 2px #ef9a9a;
+}
