@@ -20,6 +20,10 @@ class PostTestController extends Controller
 
         $user = Auth::user();
 
+        if (!$user->hasVerifiedEmail()) {
+            return redirect()->route('verification.notice')->with('error', 'You must verify your email to take the pre-test.');
+        }
+
         $preTest = $user->preTest;
 
         if (!$preTest || !$preTest->has_taken) {
@@ -54,6 +58,11 @@ class PostTestController extends Controller
         }
 
         $user = Auth::user();
+
+        if (!$user->hasVerifiedEmail()) {
+            return redirect()->route('verification.notice')->with('error', 'You must verify your email to take the pre-test.');
+        }
+
         $postTest = $user->postTest;
 
         $preTest = $user->preTest;
@@ -103,6 +112,11 @@ class PostTestController extends Controller
         }
 
         $user = Auth::user();
+
+        if (!$user->hasVerifiedEmail()) {
+            return redirect()->route('verification.notice')->with('error', 'You must verify your email to take the pre-test.');
+        }
+
         $postTest = PostTest::where('user_id', $user->id)->first();
 
         if (!$postTest || $postTest->attempt_count == 0) {

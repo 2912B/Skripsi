@@ -33,6 +33,13 @@
         </script>
     @endif
 
+    @if (session('error'))
+        <script>
+            window.errorMessage = `{{ session('error') }}`;
+            window.errorTitle = 'Error';
+        </script>
+    @endif
+
     <div class="container">
         <h1>RESEND VERIFY</h1>
         <p>Please verify your email through the email we've sent you</p><br><br>

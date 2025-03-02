@@ -9,11 +9,11 @@ use Illuminate\Support\Facades\Route;
 
 
 // Pre-Test Assessment
-Route::get('/assessment/pretest', [PreTestController::class, 'showPreTest'])->middleware('verified')->name('assessment.pretest');
-Route::get('/assessment/preresult', [PreTestController::class, 'showResults'])->middleware('verified')->name('assessment.pretestresult');
-Route::post('/assessment/pretest/complete', [PreTestController::class, 'completePreTest'])->middleware('verified')->name('assessment.pretest.complete');
+Route::get('/assessment/pretest', [PreTestController::class, 'showPreTest'])->name('assessment.pretest');
+Route::get('/assessment/preresult', [PreTestController::class, 'showResults'])->name('assessment.pretestresult');
+Route::post('/assessment/pretest/complete', [PreTestController::class, 'completePreTest'])->name('assessment.pretest.complete');
 
 // Post-Test Assessment
-Route::get('/assessment/posttest', [PostTestController::class, 'showPostTest'])->middleware('verified')->name('assessment.posttest');
-Route::get('/assessment/postresult', [PostTestController::class, 'showResults'])->middleware('verified')->name('assessment.posttestresult');
-Route::post('/assessment/posttest/complete', [PostTestController::class, 'completePostTest'])->middleware('verified')->name('assessment.posttest.complete');
+Route::get('/assessment/posttest', [PostTestController::class, 'showPostTest'])->name('assessment.posttest');
+Route::get('/assessment/postresult', [PostTestController::class, 'showResults'])->name('assessment.posttestresult');
+Route::post('/assessment/posttest/complete', [PostTestController::class, 'completePostTest'])->name('assessment.posttest.complete');

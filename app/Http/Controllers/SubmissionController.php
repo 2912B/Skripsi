@@ -14,6 +14,13 @@ class SubmissionController extends Controller
         if (!Auth::check()) {
             return redirect()->route('login')->with('error', 'You must log in first.');
         }
+
+        $user = Auth::user();
+
+        if (!$user->hasVerifiedEmail()) {
+            return redirect()->route('verification.notice')->with('error', 'You must verify your email to take the pre-test.');
+        }
+
         return view('dashboardpages.submit');
     }
 
@@ -21,6 +28,12 @@ class SubmissionController extends Controller
     {
         if (!Auth::check()) {
             return redirect()->route('login')->with('error', 'You must log in first.');
+        }
+
+        $user = Auth::user();
+
+        if (!$user->hasVerifiedEmail()) {
+            return redirect()->route('verification.notice')->with('error', 'You must verify your email to take the pre-test.');
         }
 
         $validatedData = $request->validate([
@@ -42,6 +55,12 @@ class SubmissionController extends Controller
     {
         if (!Auth::check()) {
             return redirect()->route('login')->with('error', 'You must log in first.');
+        }
+
+        $user = Auth::user();
+
+        if (!$user->hasVerifiedEmail()) {
+            return redirect()->route('verification.notice')->with('error', 'You must verify your email to take the pre-test.');
         }
 
         $submissions = Submission::where('user_id', Auth::id())->get();
