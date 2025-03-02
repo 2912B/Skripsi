@@ -14,7 +14,7 @@ class PreTestController extends Controller
     public function showPreTest()
     {
         if (!Auth::check()) {
-            return redirect()->route('/')->with('error', 'You must log in first to take the pre-test.');
+            return redirect()->route('home')->with('error', 'You must log in first to take the pre-test.');
         }
 
         $user = Auth::user();
@@ -40,7 +40,7 @@ class PreTestController extends Controller
     public function completePreTest(Request $request)
     {
         if (!Auth::check()) {
-            return redirect()->route('/')->with('error', 'You must log in first to complete the pre-test.');
+            return redirect()->route('home')->with('error', 'You must log in first to complete the pre-test.');
         }
 
         $user = Auth::user();
@@ -74,7 +74,7 @@ class PreTestController extends Controller
         $preTest = PreTest::where('user_id', $user->id)->first();
 
         if (!Auth::check()) {
-            return redirect()->route('/')->with('error', 'You must log in first to view the pre-test result.');
+            return redirect()->route('home')->with('error', 'You must log in first to view the pre-test result.');
         }
 
         if (!$user->hasVerifiedEmail()) {

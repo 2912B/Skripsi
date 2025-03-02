@@ -12,7 +12,7 @@ class SubmissionController extends Controller
     public function create()
     {
         if (!Auth::check()) {
-            return redirect()->route('/')->with('error', 'You must log in first.');
+            return redirect()->route('home')->with('error', 'You must log in first.');
         }
 
         $user = Auth::user();
@@ -27,7 +27,7 @@ class SubmissionController extends Controller
     public function store(Request $request)
     {
         if (!Auth::check()) {
-            return redirect()->route('/')->with('error', 'You must log in first.');
+            return redirect()->route('home')->with('error', 'You must log in first.');
         }
 
         $user = Auth::user();
@@ -54,7 +54,7 @@ class SubmissionController extends Controller
     public function index()
     {
         if (!Auth::check()) {
-            return redirect()->route('/')->with('error', 'You must log in first.');
+            return redirect()->route('home')->with('error', 'You must log in first.');
         }
 
         $user = Auth::user();
