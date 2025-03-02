@@ -14,7 +14,7 @@
         <!-- Features Section -->
         <div class="row">
             <div class="col-md-4 m-2">
-                <x-dashboardlink.link href="/assessment/pretest" :active="request()->is('/assessment/pretest')">
+                <x-dashboardlink.link href="/assessment/pretest" :active="request()->is('assessment.pretest')">
                     <div class="feature-icon"><i class="fas fa-check-square"></i></div>
                     <div class="card-body">
                         <h5 class="card-title">Pre-Test</h5>
@@ -25,7 +25,7 @@
             </div>
 
             <div class="col-md-4 m-2">
-                <x-dashboardlink.link href="/assessment/posttest" :active="request()->is('/assessment/posttest')">
+                <x-dashboardlink.link href="/assessment/posttest" :active="request()->is('assessment.posttest')">
                     <div class="feature-icon"><i class="fas fa-check-square"></i></div>
                     <div class="card-body">
                         <h5 class="card-title">Post-Test</h5>

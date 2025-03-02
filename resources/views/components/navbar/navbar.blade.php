@@ -9,7 +9,7 @@
                         <x-dashboardlink.gameslink href="/games" :active="request()->is('games')"><i class="fas fa-gamepad"></i>     Games</x-dashboardlink.gameslink>
                         <x-dashboardlink.simulationlink href="/simulation" :active="request()->is('simulation')"><i class="fas fa-cube"></i>  Simulation</x-dashboardlink.simulationlink>
                         <x-navbar.navbar-link href="/assessment" :active="request()->is('assessment')"><i class="fas fa-clipboard-check"></i>   Assessment</x-navbar.navbar-link>
-                        <x-navbar.navbar-link href="/submission" :active="request()->is('submission')"><i class="fas fa-upload"></i>    Submit</x-navbar.navbar-link>
+                        <x-navbar.navbar-link href="/submission" :active="request()->is('submission.create')"><i class="fas fa-upload"></i>    Submit</x-navbar.navbar-link>
                     </div>
                 </div>
             </div>
@@ -65,7 +65,7 @@
                 <x-dashboardlink.gameslink href="/games" :active="request()->is('games')">Games</x-dashboardlink.gameslink>
                 <x-dashboardlink.simulationlink href="/simulation" :active="request()->is('simulation')">Simulation</x-dashboardlink.simulationlink>
                 <x-navbar.navbar-link href="/assessment" :active="request()->is('assessment')"> Assessment</x-navbar.navbar-link>
-                <x-navbar.navbar-link href="/submission" :active="request()->is('submission')">Submit</x-navbar.navbar-link>
+                <x-navbar.navbar-link href="/submission" :active="request()->is('submission.create')">Submit</x-navbar.navbar-link>
             </div>
             <div class="mobilemenu2">
                 @auth
