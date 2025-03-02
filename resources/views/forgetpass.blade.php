@@ -46,7 +46,7 @@
             window.successTitle = 'Success';
         </script>
     @endif
-    <div class="logo">Socity</div>
+    <div class="logo">Socyty</div>
     <div class="container">
         <h1>Forgot Password</h1>
         <form action="{{ route('password.request') }}" method="POST" id="resetForm">
