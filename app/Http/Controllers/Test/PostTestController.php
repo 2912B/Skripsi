@@ -15,7 +15,7 @@ class PostTestController extends Controller
     public function showPostTest()
     {
         if (!Auth::check()) {
-            return redirect()->route('login')->with('error', 'You must log in first to take the post-test.');
+            return redirect()->route('/')->with('error', 'You must log in first to take the post-test.');
         }
 
         $user = Auth::user();
@@ -54,7 +54,7 @@ class PostTestController extends Controller
     public function completePostTest(Request $request)
     {
         if (!Auth::check()) {
-            return redirect()->route('login')->with('error', 'You must log in first to complete the post-test.');
+            return redirect()->route('/')->with('error', 'You must log in first to complete the post-test.');
         }
 
         $user = Auth::user();
@@ -108,7 +108,7 @@ class PostTestController extends Controller
     public function showResults()
     {
         if (!Auth::check()) {
-            return redirect()->route('login')->with('error', 'You must log in first to view the post-test result.');
+            return redirect()->route('/')->with('error', 'You must log in first to view the post-test result.');
         }
 
         $user = Auth::user();
