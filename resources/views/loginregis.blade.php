@@ -18,13 +18,16 @@
     {{-- Particle JS --}}
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
-    <!-- Vite -->
-    @vite('resources/js/app.js')
-    @vite('resources/css/app.css')
-    @vite('resources/css/loginstyle.css')
-    @vite('resources/js/loginscript.js')
-    @vite('resources/js/error.js')
-    @vite('resources/js/particlejs.js')
+    <link rel="stylesheet" href="{{ asset('build/assets/app-7ywPSvxu.css') }}">
+    <script src="{{ asset('build/assets/app-CWUoBES6.js') }}" defer></script>
+
+    <link rel="stylesheet" href="{{ asset('css/loginstyle.css') }}">
+
+    <script src="{{ asset('js/admin/dashboard.js') }}" defer></script>
+    <script src="{{ asset('js/error.js') }}" defer></script>
+    <script src="{{ asset('js/loginscript.js') }}" defer></script>
+
+
 </head>
 <body id="main-content">
     @if (session('error'))

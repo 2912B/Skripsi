@@ -15,12 +15,14 @@
     {{-- Particle JS --}}
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
-    @vite('resources/js/app.js')
-    @vite('resources/css/app.css')
-    @vite('resources/css/admin/dashboard.css')
-    @vite('resources/css/admin/submission.css')
-    @vite('resources/js/admin/submission.js')
-    @vite('resources/js/error.js')
+    <link rel="stylesheet" href="{{ asset('build/assets/app-7ywPSvxu.css') }}">
+    <script src="{{ asset('build/assets/app-CWUoBES6.js') }}" defer></script>
+
+    <link rel="stylesheet" href="{{ asset('css/admin/dashboard.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/admin/submission.css') }}">
+
+    <script src="{{ asset('js/admin/submission.js') }}" defer></script>
+    <script src="{{ asset('js/error.js') }}" defer></script>
 </head>
 <body>
     @if (session('success'))

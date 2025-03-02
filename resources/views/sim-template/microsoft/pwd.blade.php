@@ -21,9 +21,10 @@
     ></script>
     <script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    @vite('resources/css/app.css')
-    @vite('resources/css/sim-template/microsoft/pwd.css')
-    @vite('resources/js/sim-template/microsoft/pwd.js')
+    <link rel="stylesheet" href="{{ asset('build/assets/app-7ywPSvxu.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('css/sim-template/microsoft/pwd.css') }}">
+    <script src="{{ asset('js/sim-template/microsoft/pwd.js') }}" defer></script>
   </head>
   <body>
     <div class="formcontainer">

@@ -1,0 +1,179 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/f562aaf4-5dbb-4603-a32b-6ef6c2230136/dh0w8qv-9d8ee6b2-b41a-4681-ab9b-8a227560dc75.jpg/v1/fill/w_1192,h_670,q_70,strp/the_netflix_login_background__canada__2024___by_logofeveryt_dh0w8qv-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6IlwvZlwvZjU2MmFhZjQtNWRiYi00NjAzLWEzMmItNmVmNmMyMjMwMTM2XC9kaDB3OHF2LTlkOGVlNmIyLWI0MWEtNDY4MS1hYjliLThhMjI3NTYwZGM3NS5qcGciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.LOYKSxIDqfPwWHR0SSJ-ugGQ6bECF0yO6Cmc0F26CQs")
+        center/cover no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: last baseline;
+    background-color: rgba(0, 0, 0, 0.94);
+    position: relative;
+}
+
+.container {
+    position: relative;
+    justify-content: center;
+}
+
+.netflix-logo {
+    position: absolute;
+    top: 24px;
+    left: 175px;
+    width: 150px;
+}
+
+h2 {
+    color: white;
+    text-align: left;
+    margin-bottom: 30px;
+    font-size: 30px;
+    margin-left: 5px;
+}
+
+.sign-in-box {
+    background-color: #000000ce;
+    margin-left: 550px;
+    height: 630px;
+    padding: 30px 60px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    width: 29%;
+}
+
+.input-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.input-container input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+    outline: none;
+}
+
+.input-container input.error-border {
+    border: 1px solid #e50914;
+}
+
+.input-container label {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+/* Floating label effect when input is focused or has content */
+.input-container input:focus + label,
+.input-container input.not-empty + label {
+    top: 10px;
+    font-size: 12px;
+    color: white;
+}
+
+.input-container input:focus {
+    border: 1px solid white;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.error-message {
+    color: #e50914;
+    font-size: 13px;
+    margin-top: -20px;
+    margin-bottom: 10px;
+    display: none;
+}
+
+button {
+    background-color: #e50914;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #d30610ea;
+}
+
+.or-divider {
+    text-align: center;
+    margin: 20px 0;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.sign-in-code {
+    width: 100%;
+    margin-bottom: 15px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.sign-in-code:hover {
+    background-color: rgba(107, 107, 107, 0.432);
+}
+
+.forgot-password {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.remember {
+    color: white;
+}
+
+#remember-me {
+    margin-right: 5px;
+}
+
+.newcomers {
+    margin-left: 2px;
+    margin-top: 20px;
+    color: #8c8c8c;
+}
+
+.disclaimer {
+    margin-left: 2px;
+    margin-top: 20px;
+    font-size: 12px;
+    color: #8c8c8c;
+}
+
+.disclaimer a {
+    color: #0071eb;
+    text-decoration: none;
+}
+
+.disclaimer a:hover {
+    text-decoration: underline;
+}

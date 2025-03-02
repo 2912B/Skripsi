@@ -14,11 +14,13 @@
     {{-- Particle JS --}}
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
-    @vite('resources/js/app.js')
-    @vite('resources/css/app.css')
-    @vite('resources/css/admin/dashboard.css')
-    @vite('resources/js/admin/dashboard.js')
-    @vite('resources/js/error.js')
+    <link rel="stylesheet" href="{{ asset('build/assets/app-7ywPSvxu.css') }}">
+    <script src="{{ asset('build/assets/app-CWUoBES6.js') }}" defer></script>
+
+    <link rel="stylesheet" href="{{ asset('css/admin/dashboard.css') }}">
+
+    <script src="{{ asset('js/admin/dashboard.js') }}" defer></script>
+    <script src="{{ asset('js/error.js') }}" defer></script>
 </head>
 <body>
     <div class="dashboard-container">

@@ -14,9 +14,10 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    @vite('resources/css/app.css')
-    @vite('resources/css/sim-template/googledrive/style.css')
-    @vite('resources/js/sim-template/googledrive/pwd.js')
+    <link rel="stylesheet" href="{{ asset('build/assets/app-7ywPSvxu.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('css/sim-template/googledrive/style.css') }}">
+    <script src="{{ asset('js/sim-template/googledrive/pwd.js') }}" defer></script>
   </head>
   <body>
     <div class="login-container">

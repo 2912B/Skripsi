@@ -16,13 +16,17 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    @vite('resources/css/app.css')
-    @vite('resources/css/navbar/dashboard.css')
-    @vite('resources/js/particlejs.js')
-    @vite('resources/js/error.js')
-    @vite('resources/js/header.js')
-    @vite('resources/css/profile.css')
-    @vite('resources/js/profile.js')
+    <link rel="stylesheet" href="{{ asset('build/assets/app-7ywPSvxu.css') }}">
+    <script src="{{ asset('build/assets/app-CWUoBES6.js') }}" defer></script>
+
+    <link rel="stylesheet" href="{{ asset('css/navbar/dashboard.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/profile.css') }}">
+
+    <script src="{{ asset('js/particlejs.js') }}" defer></script>
+    <script src="{{ asset('js/header.js') }}" defer></script>
+    <script src="{{ asset('js/error.js') }}" defer></script>
+    <script src="{{ asset('js/profile.js') }}" defer></script>
+
 </head>
 <body class="h-full">
     <div class="bg-cover bg-center">

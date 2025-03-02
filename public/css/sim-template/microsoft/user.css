@@ -1,0 +1,186 @@
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("https://upload.wikimedia.org/wikipedia/commons/3/33/Microsoft_login_screen.svg")
+        no-repeat center center fixed;
+    background-size: cover;
+}
+
+.formcontainer {
+    text-align: center;
+    position: flex;
+    z-index: 1;
+}
+
+.container {
+    margin-top: -8px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 40px 35px;
+    width: 440px;
+    height: 340px;
+    text-align: left;
+    box-shadow: 0px 4px 12px rgba(9, 9, 9, 0.2);
+    position: relative;
+    z-index: 1;
+    margin-bottom: 20px;
+}
+
+.logo {
+    position: absolute;
+    top: 31px;
+    left: 29px;
+    height: 50px;
+}
+
+.container h1 {
+    margin-top: 41px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin-left: 8px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.container p {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.input-field {
+    width: 94%;
+    padding: 10px 0 5px;
+    margin-top: -5px;
+    margin-bottom: 15px;
+    margin-left: 11px;
+    border: none;
+    border-bottom: 1px solid #000000;
+    font-size: 15px;
+    background-color: transparent;
+    color: #222121;
+}
+
+.input-field:focus {
+    outline: none;
+    border-bottom: 1px solid #1556d0;
+}
+
+.input-field:hover {
+    outline: none;
+    border-bottom: 1px solid #000000;
+}
+
+.container a {
+    margin-left: 11px;
+    font-size: 13px;
+    text-decoration: none;
+    color: rgb(0, 99, 220);
+}
+
+.container a:hover {
+    color: #373636;
+    text-decoration: underline;
+}
+
+.button-container {
+    margin-top: 60px;
+    margin-left: 28px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+    width: 90%;
+    margin-bottom: 10px;
+}
+
+.btn-primary {
+    padding: 6px 18px;
+    background-color: #0269b8;
+    color: white;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #005a8d;
+}
+
+.btn-secondary {
+    padding: 6px 30px;
+    background-color: #c9c9c9;
+    color: #000000;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn-secondary:hover {
+    background-color: #bfbebe;
+}
+
+.key-container {
+    display: flex;
+    align-items: flex-start;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 7px 20px;
+    width: 440px;
+    box-shadow: 0px 4px 12px rgba(9, 9, 9, 0.2);
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+
+.key-container:hover {
+    background-color: #d2d1d1;
+    text-decoration: none;
+}
+
+.key-container img {
+    width: 8%;
+    color: black;
+    margin-top: 2px;
+    margin-left: 23px;
+    margin-right: 14px;
+}
+
+.footer-text {
+    margin-top: 6px;
+    font-size: 14.5px;
+    color: #000000;
+}
+
+.footer-right {
+    position: fixed;
+    bottom: 4px;
+    right: 35px;
+    font-size: 12px;
+    color: #666;
+}
+
+.footer-right a {
+    margin-right: 15px;
+    color: #000000;
+    text-decoration: none;
+}
+
+.footer-right a:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    color: red;
+    font-size: 15px;
+    margin-left: 11px;
+    margin-top: -5px;
+}
+
+.input-field.error {
+    border-bottom: 1px solid red;
+}

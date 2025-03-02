@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Elements from the DOM identified by ID
     const questionElement = document.getElementById("question");
     const reasonElement = document.getElementById("reason");
     const choices = Array.from(document.getElementsByClassName("choice-desc"));
@@ -10,7 +9,17 @@ document.addEventListener("DOMContentLoaded", function () {
     const nextbutton = document.getElementById("nextbutton");
     const finishbutton = document.getElementById("finishbutton");
 
-    // Game variables initialization
+    const doubleScoreButton = document.getElementById("doubleScore");
+    const freezeTimeButton = document.getElementById("freezeTime");
+    const fiftyFiftyButton = document.getElementById("fiftyFifty");
+
+    const backgroundMusic = new Audio("/sounds/background.mp3");
+    const correctSound = new Audio("/sounds/clap.mp3");
+    const incorrectSound = new Audio("/sounds/boo.mp3");
+    const timeoutSound = new Audio("/sounds/timeout.mp3");
+    let isMuted = false;
+    let soundsEnabled = true;
+
     let questionCounter = 0;
     let score = 0;
     let currentQuestion = {};
@@ -18,27 +27,59 @@ document.addEventListener("DOMContentLoaded", function () {
     let timer;
     let timeLeft = 60;
 
+    let doubleScoreActive = false;
+    let freezeTimeActive = false;
+    let fiftyFiftyActive = false;
+    let fiftyFiftyUsed = false;
+
     const CORRECT_BONUS = 10;
     const MAX_QUESTIONS = 10;
 
-    // Store original questions and a variable to hold shuffled questions
-    const originalQuestions = questions; // This variable now holds the original set of questions
-    let shuffledQuestions = []; // This will hold the shuffled set of questions
+    const originalQuestions = questions;
+    let shuffledQuestions = [];
+
+    function stopAllSounds() {
+        backgroundMusic.pause();
+        correctSound.pause();
+        incorrectSound.pause();
+        timeoutSound.pause();
+        backgroundMusic.currentTime = 0;
+        correctSound.currentTime = 0;
+        incorrectSound.currentTime = 0;
+        timeoutSound.currentTime = 0;
+    }
 
     function shuffleQuestions(array) {
-        let shuffled = array.slice(); // Make a copy of the array to shuffle
+        let shuffled = array.slice();
         for (let i = shuffled.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
-            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]; // Swap elements
+            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
         }
         return shuffled;
     }
 
-    // Starts the game, setting initial values and loading the first question
     function startGame() {
-        shuffledQuestions = shuffleQuestions(originalQuestions); // Shuffle the original questions
+        shuffledQuestions = shuffleQuestions(originalQuestions);
         questionCounter = 0;
         score = 0;
+        doubleScoreActive = false;
+        freezeTimeActive = false;
+        fiftyFiftyActive = false;
+        fiftyFiftyUsed = false;
+        doubleScoreButton.disabled = false;
+        freezeTimeButton.disabled = false;
+        fiftyFiftyButton.disabled = false;
+        doubleScoreButton.classList.remove("used");
+        freezeTimeButton.classList.remove("used");
+        fiftyFiftyButton.classList.remove("used");
+        finishbutton.style.display = "none";
+
+        soundsEnabled = true;
+        if (soundsEnabled && !isMuted) {
+            backgroundMusic.loop = true;
+            backgroundMusic.volume = 0.4;
+            backgroundMusic.play();
+        }
         getNewQuestion();
     }
 
@@ -50,6 +91,11 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
+        correctSound.pause();
+        incorrectSound.pause();
+        backgroundMusic.play();
+        backgroundMusic.volume = 0.4;
+
         currentQuestion = shuffledQuestions[questionCounter];
         questionElement.innerText = currentQuestion.question_text;
 
@@ -57,6 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const choiceData = currentQuestion.choices[index];
             choice.innerText = choiceData.choice_text;
             choice.dataset.isCorrect = choiceData.is_correct;
+            choice.parentElement.style.display = "";
             choice.parentElement.classList.remove(
                 "selected",
                 "correct",
@@ -64,6 +111,12 @@ document.addEventListener("DOMContentLoaded", function () {
             );
             choice.disabled = false;
         });
+
+        fiftyFiftyActive = false;
+        if (fiftyFiftyUsed) {
+            fiftyFiftyButton.disabled = true;
+            fiftyFiftyButton.classList.add("used");
+        }
 
         timeLeft = 60;
         progresstext.innerText = `Question ${
@@ -82,6 +135,18 @@ document.addEventListener("DOMContentLoaded", function () {
         startTimer();
 
         questionCounter++;
+
+        if (soundsEnabled && !isMuted) {
+            backgroundMusic.play();
+        } else {
+            stopAllSounds();
+        }
+    }
+
+    function playSound(sound) {
+        if (soundsEnabled && !isMuted) {
+            sound.play();
+        }
     }
 
     function startTimer() {
@@ -89,6 +154,8 @@ document.addEventListener("DOMContentLoaded", function () {
             if (timeLeft <= 0) {
                 clearInterval(timer);
                 if (!hasSubmittedAnswer) {
+                    backgroundMusic.pause();
+                    playSound(timeoutSound);
                     revealCorrectAnswer();
                 }
             } else {
@@ -122,6 +189,7 @@ document.addEventListener("DOMContentLoaded", function () {
             nextbutton.style.display = "block";
         } else {
             finishbutton.style.display = "block";
+            nextbutton.style.display = "none";
         }
     }
 
@@ -134,12 +202,21 @@ document.addEventListener("DOMContentLoaded", function () {
         );
         if (selectedChoice) {
             hasSubmittedAnswer = true;
+            let currentScore = CORRECT_BONUS;
 
             if (selectedChoice.dataset.isCorrect === "1") {
                 selectedChoice.parentElement.classList.add("correct");
-                score += CORRECT_BONUS;
+                if (doubleScoreActive) {
+                    currentScore *= 2;
+                    doubleScoreActive = false;
+                }
+                score += currentScore;
+                playSound(correctSound);
+                backgroundMusic.volume = 0.2;
             } else {
                 selectedChoice.parentElement.classList.add("incorrect");
+                playSound(incorrectSound);
+                backgroundMusic.volume = 0.2;
             }
 
             choices.forEach((c) => {
@@ -147,34 +224,30 @@ document.addEventListener("DOMContentLoaded", function () {
                     c.parentElement.classList.add("correct");
                 }
             });
-        }
 
-        reasonElement.innerText = currentQuestion.reason;
-        reasonElement.classList.add("active");
-        scoretext.innerText = `Score: ${score}`;
-        submitbutton.style.display = "none";
+            reasonElement.innerText = currentQuestion.reason;
+            reasonElement.classList.add("active");
+            scoretext.innerText = `Score: ${score}`;
+            submitbutton.style.display = "none";
 
-        if (questionCounter < MAX_QUESTIONS) {
-            nextbutton.style.display = "block";
-        } else {
-            finishbutton.style.display = "block";
+            revealCorrectAnswer();
         }
     }
 
-    // Event listeners for choice selection and button clicks
     choices.forEach((choice) => {
         choice.addEventListener("click", () => {
-            if (hasSubmittedAnswer) return; // Prevent interaction after an answer is submitted
+            if (hasSubmittedAnswer) return;
 
             choices.forEach((c) =>
                 c.parentElement.classList.remove("selected")
             );
             choice.parentElement.classList.add("selected");
-            submitbutton.disabled = false; // Enable the submit button once a choice is made
+            submitbutton.disabled = false;
         });
     });
 
     function finishGame() {
+        stopAllSounds();
         sessionStorage.setItem("EndScore", score);
         window.location.href = resultUrl;
     }
@@ -187,5 +260,67 @@ document.addEventListener("DOMContentLoaded", function () {
     nextbutton.addEventListener("click", getNewQuestion);
 
     finishbutton.addEventListener("click", finishGame);
-    startGame(); // Initialize the game
+
+    const muteButton = document.getElementById("muteButton");
+    muteButton.addEventListener("click", () => {
+        isMuted = !isMuted;
+        if (isMuted) {
+            muteButton.textContent = "Unmute";
+            soundsEnabled = false;
+            stopAllSounds();
+        } else {
+            muteButton.textContent = "Mute";
+            soundsEnabled = true;
+            if (backgroundMusic.paused) {
+                backgroundMusic.play();
+            }
+        }
+    });
+
+    doubleScoreButton.addEventListener("click", () => {
+        if (!doubleScoreActive) {
+            doubleScoreActive = true;
+            doubleScoreButton.disabled = true;
+            doubleScoreButton.classList.add("used");
+        }
+    });
+
+    freezeTimeButton.addEventListener("click", () => {
+        if (!freezeTimeActive) {
+            freezeTimeActive = true;
+            freezeTimeButton.disabled = true;
+            freezeTimeButton.classList.add("used");
+            clearInterval(timer);
+        }
+    });
+
+    fiftyFiftyButton.addEventListener("click", () => {
+        if (!fiftyFiftyActive && !fiftyFiftyUsed) {
+            fiftyFiftyActive = true;
+            fiftyFiftyUsed = true;
+            fiftyFiftyButton.disabled = true;
+            fiftyFiftyButton.classList.add("used");
+            applyFiftyFifty();
+        }
+    });
+
+    function applyFiftyFifty() {
+        const correctChoice = choices.find(
+            (choice) => choice.dataset.isCorrect === "1"
+        );
+        if (!correctChoice) return;
+
+        const incorrectChoices = choices.filter(
+            (choice) =>
+                choice.dataset.isCorrect !== "1" &&
+                choice.parentElement.style.display !== "none"
+        );
+        const choicesToRemove = shuffleQuestions(incorrectChoices).slice(0, 2);
+
+        choicesToRemove.forEach((choice) => {
+            choice.parentElement.style.display = "none";
+        });
+    }
+
+    startGame();
 });

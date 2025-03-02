@@ -20,9 +20,10 @@
     ></script>
     <script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    @vite('resources/css/app.css')
-    @vite('resources/css/sim-template/fedex/style.css')
-    @vite('resources/js/sim-template/fedex/script.js')
+    <link rel="stylesheet" href="{{ asset('build/assets/app-7ywPSvxu.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('css/sim-template/fedex/style.css') }}">
+    <script src="{{ asset('js/sim-template/fedex/script.js') }}" defer></script>
 </head>
 <body>
     <header>

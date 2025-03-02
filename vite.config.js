@@ -8,6 +8,9 @@ export default defineConfig({
         strictPort: true,
         cors: true,
     },
+    build: {
+        force: true,
+    },
     plugins: [
         laravel({
             input: ["resources/css/app.css", "resources/js/app.js"],

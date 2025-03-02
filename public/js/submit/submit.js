@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const gameSelect = document.getElementById("game-select");
+    const gameSelect = document.getElementById("game");
+    const categorySelect = document.getElementById("category");
+
     gameSelect.addEventListener("change", updateCategories);
 
     function updateCategories() {
@@ -13,19 +15,16 @@ document.addEventListener("DOMContentLoaded", function () {
             ],
         };
 
-        const categorySelect = document.getElementById("category-select");
         const selectedGame = gameSelect.value;
 
-        // Clear existing options
         categorySelect.innerHTML =
             '<option value="">--Please choose a category--</option>';
 
-        // Populate new options if the game has categories
         if (categories[selectedGame]) {
             categories[selectedGame].forEach((category) => {
                 const option = document.createElement("option");
                 option.value = category.toLowerCase();
-                option.textContent = category;
+                option.text = category;
                 categorySelect.appendChild(option);
             });
         }

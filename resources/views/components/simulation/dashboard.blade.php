@@ -24,6 +24,15 @@
     @vite('resources/js/particlejs.js')
     @vite('resource/js/app.js')
     @vite('resources/js/error.js')
+
+    <link rel="stylesheet" href="{{ asset('build/assets/app-7ywPSvxu.css') }}">
+    <script src="{{ asset('build/assets/app-CWUoBES6.js') }}" defer></script>
+
+    <link rel="stylesheet" href="{{ asset('css/navbar/dashboard.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/simulation/dashboard.css') }}">
+
+    <script src="{{ asset('js/error.js') }}" defer></script>
+    <script src="{{ asset('js/particlejs.js') }}" defer></script>
 </head>
 <body class="h-full">
     <div class="bg-cover bg-center">

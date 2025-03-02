@@ -58,7 +58,7 @@
 }
 
 /* Styling for all paragraphs */
-p {
+.form-container p {
     background-color: #162035;
     padding: 10px;
     border-left: 5px solid #00a6fb;
@@ -132,7 +132,12 @@ li::before {
     color: #ffffff;
 }
 
-.tracker-container th,
+.tracker-container th {
+    border: 1px solid #4a5a6b;
+    padding: 8px;
+    text-align: center;
+}
+
 .tracker-container td {
     border: 1px solid #4a5a6b;
     padding: 8px;

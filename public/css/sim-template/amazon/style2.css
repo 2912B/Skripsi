@@ -1,0 +1,146 @@
+/* General reset and basic styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Arial", sans-serif;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.login-container {
+    background-color: transparent;
+    width: 350px;
+    padding: 20px 25px;
+    border: 1px solid rgba(209, 208, 208, 0.915);
+    border-radius: 10px;
+}
+
+.header {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.header img {
+    width: 100px;
+}
+
+.username {
+    display: flex;
+}
+
+.username p {
+    font-size: 14px;
+    margin-left: 1px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+}
+
+.username a {
+    font-size: 14px;
+    color: #0d5b9f;
+}
+
+.username a:hover {
+    color: #c02c07;
+    text-decoration: underline;
+}
+
+.login-form h1 {
+    font-size: 28px;
+    font-weight: 200;
+    margin-bottom: 10px;
+}
+
+.login-form .place {
+    margin-bottom: 2px;
+    font-weight: 600;
+    font-size: 14px;
+    margin-left: 2px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 4px 7px;
+    font-size: 14px;
+    border: 1px solid #242424;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.head {
+    display: flex;
+}
+
+.head .forgot-link {
+    margin-left: 118px;
+    font-size: 14px;
+    color: #0d5b9f;
+}
+
+.head .forgot-link:hover {
+    color: #c02c07;
+    text-decoration: underline;
+}
+
+.continue-button {
+    width: 100%;
+    padding: 5px;
+    background-color: #fedc00;
+    color: black;
+    border: none;
+    border-radius: 30px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin: 15px 0 20px;
+}
+
+.continue-button:hover {
+    background-color: #ffbf00;
+}
+
+footer {
+    margin-top: 30px;
+    border-top: 0.5px solid rgba(184, 183, 183, 0.915);
+    width: 98%;
+    text-align: center;
+    font-size: 12px;
+    color: #555;
+    padding: 10px;
+}
+
+footer .footer-link {
+    margin-top: 30px;
+    color: #0d5b9f;
+    text-decoration: none;
+    font-size: 12.5px;
+    margin-bottom: 10px;
+}
+
+.footer-link a {
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.footer-link a:hover {
+    color: #c02c07;
+    text-decoration: underline;
+}
+
+.error-text {
+    color: #c02c07;
+    font-size: 12px;
+    margin: 0px 5px 10px;
+    font-weight: 600;
+}
+
+input:invalid {
+    border-color: #c02c07;
+}

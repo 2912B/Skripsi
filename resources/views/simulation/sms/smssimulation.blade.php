@@ -14,27 +14,29 @@
     <!-- JS -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
-    @vite('resources/js/app.js')
-    @vite('resources/css/app.css')
-    @vite('resources/js/particlejs.js')
-    @vite('resources/js/simulation/simulation.js')
-    @vite('resources/css/simulation/simulation.css')
+    <link rel="stylesheet" href="{{ asset('build/assets/app-7ywPSvxu.css') }}">
+    <script src="{{ asset('build/assets/app-CWUoBES6.js') }}" defer></script>
+
+    <link rel="stylesheet" href="{{ asset('css/simulation/simulation.css') }}">
+
+    <script src="{{ asset('js/particlejs.js') }}" defer></script>
+    <script src="{{ asset('js/simulation/simulation.js') }}" defer></script>
 
     @if($levelId == 1)
-        @vite('resources/css/simulation/smstemplate/level1.css')
-        @vite('resources/js/sms/level1.js')
+        <link rel="stylesheet" href="{{ asset('css/simulation/smstemplate/level1.css') }}">
+        <script src="{{ asset('js/sms/level1.js') }}" defer></script>
     @elseif($levelId == 2)
-        @vite('resources/css/simulation/smstemplate/level2.css')
-        @vite('resources/js/sms/level2.js')
+        <link rel="stylesheet" href="{{ asset('css/simulation/smstemplate/level2.css') }}">
+        <script src="{{ asset('js/sms/level2.js') }}" defer></script>
     @elseif($levelId == 3)
-        @vite('resources/css/simulation/smstemplate/level3.css')
-        @vite('resources/js/sms/level3.js')
+        <link rel="stylesheet" href="{{ asset('css/simulation/smstemplate/level3.css') }}">
+        <script src="{{ asset('js/sms/level3.js') }}" defer></script>
     @elseif($levelId == 4)
-        @vite('resources/css/simulation/smstemplate/level4.css')
-        @vite('resources/js/sms/level4.js')
+        <link rel="stylesheet" href="{{ asset('css/simulation/smstemplate/level4.css') }}">
+        <script src="{{ asset('js/sms/level4.js') }}" defer></script>
     @elseif($levelId == 5)
-        @vite('resources/css/simulation/smstemplate/level5.css')
-        @vite('resources/js/sms/level5.js')
+        <link rel="stylesheet" href="{{ asset('css/simulation/smstemplate/level5.css') }}">
+        <script src="{{ asset('js/sms/level5.js') }}" defer></script>
     @endif
 </head>
 <body id="main-content">

@@ -14,22 +14,24 @@
     <!-- JS -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
-    @vite('resources/js/app.js')
-    @vite('resources/css/app.css')
-    @vite('resources/js/particlejs.js')
-    @vite('resources/js/simulation/simulation.js')
-    @vite('resources/css/simulation/simulation.css')
+    <link rel="stylesheet" href="{{ asset('build/assets/app-7ywPSvxu.css') }}">
+    <script src="{{ asset('build/assets/app-CWUoBES6.js') }}" defer></script>
+
+    <link rel="stylesheet" href="{{ asset('css/simulation/simulation.css') }}">
+
+    <script src="{{ asset('js/particlejs.js') }}" defer></script>
+    <script src="{{ asset('js/simulation/simulation.js') }}" defer></script>
 
     @if($levelId == 1)
-        @vite('resources/css/simulation/emailtemplate/level1.css')
+        <link rel="stylesheet" href="{{ asset('css/simulation/emailtemplate/level1.css') }}">
     @elseif($levelId == 2)
-        @vite('resources/css/simulation/emailtemplate/level2.css')
+        <link rel="stylesheet" href="{{ asset('css/simulation/emailtemplate/level2.css') }}">
     @elseif($levelId == 3)
-        @vite('resources/css/simulation/emailtemplate/level3.css')
+        <link rel="stylesheet" href="{{ asset('css/simulation/emailtemplate/level3.css') }}">
     @elseif($levelId == 4)
-        @vite('resources/css/simulation/emailtemplate/level4.css')
+        <link rel="stylesheet" href="{{ asset('css/simulation/emailtemplate/level4.css') }}">
     @elseif($levelId == 5)
-        @vite('resources/css/simulation/emailtemplate/level5.css')
+        <link rel="stylesheet" href="{{ asset('css/simulation/emailtemplate/level5.css') }}">
     @endif
 </head>
 <body id="main-content">

@@ -247,6 +247,10 @@ body {
     background-color: #ff6347;
 }
 
+#finishbutton {
+    display: inline-block;
+}
+
 #submitbutton {
     background-color: #00d1b2;
 }
@@ -295,6 +299,12 @@ body {
     margin-bottom: 20px;
 }
 
+.finalscore {
+    font-size: 48px;
+    color: #e94560;
+    margin-bottom: 20px;
+}
+
 button {
     margin: 10px;
     padding: 12px 20px;
@@ -310,6 +320,34 @@ button {
 
 button:hover {
     background-color: #e94560;
+}
+
+.powerups {
+    gap: 10px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.powerup-button {
+    padding: 8px 12px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.powerup-button:disabled,
+.powerup-button.used {
+    background-color: #ccc;
+    cursor: default;
+}
+
+.mute-icon {
+    padding: 8px 12px;
+    color: white;
+    border: none;
+    cursor: pointer;
 }
 
 @media (max-width: 1100px) {

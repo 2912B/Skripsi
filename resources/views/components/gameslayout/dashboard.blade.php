@@ -16,10 +16,12 @@
     {{-- Particle JS --}}
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
-    @vite('resources/css/app.css')
-    @vite('resources/css/navbar/dashboard.css')
-    @vite('resources/css/games/games.css')
-    @vite('resources/js/particlejs.js')
+    <link rel="stylesheet" href="{{ asset('build/assets/app-7ywPSvxu.css') }}">
+    <script src="{{ asset('build/assets/app-CWUoBES6.js') }}" defer></script>
+    <link rel="stylesheet" href="{{ asset('css/navbar/dashboard.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/games/games.css') }}">
+
+    <script src="{{ asset('js/particlejs.js') }}" defer></script>
 </head>
 <body class="h-full">
     <div class="bg-cover bg-center">

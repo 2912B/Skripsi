@@ -22,6 +22,13 @@
     @vite('resources/css/app.css')
     @vite('resources/css/mail/verify.css')
     @vite('resources/js/particlejs.js')
+
+    <link rel="stylesheet" href="{{ asset('build/assets/app-7ywPSvxu.css') }}">
+    <script src="{{ asset('build/assets/app-CWUoBES6.js') }}" defer></script>
+
+    <link rel="stylesheet" href="{{ asset('css/mail/verify.css') }}">
+
+    <script src="{{ asset('js/particlejs.js') }}" defer></script>
 </head>
 <body id="main-content">
     @if (session('success'))
