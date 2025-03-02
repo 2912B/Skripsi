@@ -18,13 +18,6 @@
     {{-- Particle JS --}}
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
-    @vite('resources/css/app.css')
-    @vite('resources/css/navbar/dashboard.css')
-    @vite('resources/css/simulation/dashboard.css')
-    @vite('resources/js/particlejs.js')
-    @vite('resource/js/app.js')
-    @vite('resources/js/error.js')
-
     <link rel="stylesheet" href="{{ asset('build/assets/app-7ywPSvxu.css') }}">
     <script src="{{ asset('build/assets/app-CWUoBES6.js') }}" defer></script>
 
