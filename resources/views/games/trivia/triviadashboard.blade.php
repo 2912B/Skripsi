@@ -16,7 +16,7 @@
     <div class="row">
         <div class="col-md-4 m-2">
             <x-dashboardlink.link href="/games/trivia/cyber-threat" :active="request()->is('/games/trivia/cyber-threat')">
-                <div class="feature-icon">🎮</div>
+                <div class="feature-icon" style="display: flex; justify-content: center; align-items: center;"><img src="{{ asset('img/icongames.png') }}" alt="Game Icon"></div>
                 <div class="card-body">
                     <h5 class="card-title">Cyber Threat</h5>
                 </div>
@@ -25,7 +25,7 @@
 
         <div class="col-md-4 m-2">
             <x-dashboardlink.link href="/games/trivia/security-best-practice" :active="request()->is('/games/trivia/security-best-practice')">
-                <div class="feature-icon">🎮</div>
+                <div class="feature-icon" style="display: flex; justify-content: center; align-items: center;"><img src="{{ asset('img/icongames.png') }}" alt="Game Icon"></div>
                 <div class="card-body">
                     <h5 class="card-title">Security Best Practice</h5>
                 </div>
@@ -34,7 +34,7 @@
 
         <div class="col-md-4 m-2">
             <x-dashboardlink.link href="/games/trivia/data-privacy" :active="request()->is('/games/trivia/data-privacy')">
-                <div class="feature-icon">🎮</div>
+                <div class="feature-icon" style="display: flex; justify-content: center; align-items: center;"><img src="{{ asset('img/icongames.png') }}" alt="Game Icon"></div>
                 <div class="card-body">
                     <h5 class="card-title">Data Privacy</h5>
                 </div>

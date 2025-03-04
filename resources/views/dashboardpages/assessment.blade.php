@@ -15,9 +15,9 @@
         <div class="row">
             <div class="col-md-4 m-2">
                 <x-dashboardlink.link href="/assessment/pretest" :active="request()->is('assessment.pretest')">
-                    <div class="feature-icon"><i class="fas fa-check-square"></i></div>
+                    <div class="feature-icon" style="display: flex; justify-content: center; align-items: center;"><img src="{{ asset('img/iconassessment.png') }}" alt="Game Icon"></div>
                     <div class="card-body">
-                        <h5 class="card-title">Pre-Test</h5>
+                        <h5 class="card-title">Pre-Ttest</h5>
                         <p class="card-text">A test before you start playing our games and simulations</p>
                         <p>Note: You can only take once</p>
                     </div>
@@ -26,9 +26,9 @@
 
             <div class="col-md-4 m-2">
                 <x-dashboardlink.link href="/assessment/posttest" :active="request()->is('assessment.posttest')">
-                    <div class="feature-icon"><i class="fas fa-check-square"></i></div>
+                    <div class="feature-icon" style="display: flex; justify-content: center; align-items: center;"><img src="{{ asset('img/iconassessment.png') }}" alt="Game Icon"></div>
                     <div class="card-body">
-                        <h5 class="card-title">Post-Test</h5>
+                        <h5 class="card-title">Post-test</h5>
                         <p class="card-text">A test after finish playing our games and simulations</p>
                     </div>
                 </x-dashboardlink.link>

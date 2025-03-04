@@ -23,7 +23,7 @@
         <div class="row">
             <div class="col-md-4 m-2">
                 <x-dashboardlink.link href="/games" :active="request()->is('/games')">
-                    <div class="feature-icon">🎮</div>
+                    <div class="feature-icon" style="display: flex; justify-content: center; align-items: center;"><img src="{{ asset('img/icongames.png') }}" alt="Game Icon"></div>
                     <div class="card-body">
                         <h5 class="card-title">Games</h5>
                         <p class="card-text">Level up your cybersecurity skills with interactive challenges that take you through real-world scenarios. Master the game by recognizing threats, making smart moves, and protecting your digital world like a pro!</p>
@@ -33,7 +33,7 @@
 
             <div class="col-md-4 m-2">
                 <x-dashboardlink.link href="/simulation" :active="request()->is('/simulation')">
-                    <div class="feature-icon">📦</div>
+                    <div class="feature-icon" style="display: flex; justify-content: center; align-items: center;"><img src="{{ asset('img/iconsimulation.png') }}" alt="Game Icon"></div>
                     <div class="card-body">
                         <h5 class="card-title">Simulations</h5>
                         <p class="card-text">Boost your cybersecurity awareness with immersive simulations that put you in real-world scenarios. From spotting phishing attempts to managing security breaches, gain hands-on experience to protect your digital environment. Stay sharp, stay secure!</p>
@@ -43,7 +43,7 @@
 
             <div class="col-md-4 m-2">
                 <x-dashboardlink.link href="/assessment" :active="request()->is('/assessment')">
-                    <div class="feature-icon">📝</div>
+                    <div class="feature-icon" style="display: flex; justify-content: center; align-items: center;"><img src="{{ asset('img/iconassessment.png') }}" alt="Game Icon"></div>
                     <div class="card-body">
                         <h5 class="card-title">Assessment</h5>
                         <p class="card-text">Test your cybersecurity awareness with interactive assessments that challenge your knowledge and reveal areas to improve. Sharpen your skills and stay ahead in protecting your digital world!</p>

@@ -7,9 +7,9 @@
                 <div class="navbarlinkpc">
                     <div class="links">
                         <x-dashboardlink.gameslink href="/games" :active="request()->is('games')"><i class="fas fa-gamepad"></i>     Games</x-dashboardlink.gameslink>
-                        <x-dashboardlink.simulationlink href="/simulation" :active="request()->is('simulation')"><i class="fas fa-cube"></i>  Simulation</x-dashboardlink.simulationlink>
-                        <x-navbar.navbar-link href="/assessment" :active="request()->is('assessment')"><i class="fas fa-clipboard-check"></i>   Assessment</x-navbar.navbar-link>
-                        <x-navbar.navbar-link href="/submission" :active="request()->is('submission.create')"><i class="fas fa-upload"></i>    Submit</x-navbar.navbar-link>
+                        <x-dashboardlink.simulationlink href="/simulation" :active="request()->is('simulation')"><i class="fas fa-cube"></i>  Simulations</x-dashboardlink.simulationlink>
+                        <x-navbar.navbar-link href="/assessment" :active="request()->is('assessment')"><i class="fas fa-clipboard-check"></i>   Assessments</x-navbar.navbar-link>
+                        <x-navbar.navbar-link href="/submission" :active="request()->is('submission.create')"><i class="fas fa-upload"></i>    Submit Questions</x-navbar.navbar-link>
                     </div>
                 </div>
             </div>
@@ -39,7 +39,7 @@
                         </div>
                     </div>
                     @else
-                    <x-navbar.navbar-link href="/loginregis">Login/Register</x-navbar.navbar-link>
+                    <x-navbar.navbar-link href="/loginregis">Login</x-navbar.navbar-link>
                     @endauth
                 </div>
             </div>
@@ -63,9 +63,9 @@
         <div x-show="isOpen" class="md:hidden" id="mobile-menu">
             <div class="dropmobilemenu">
                 <x-dashboardlink.gameslink href="/games" :active="request()->is('games')">Games</x-dashboardlink.gameslink>
-                <x-dashboardlink.simulationlink href="/simulation" :active="request()->is('simulation')">Simulation</x-dashboardlink.simulationlink>
-                <x-navbar.navbar-link href="/assessment" :active="request()->is('assessment')"> Assessment</x-navbar.navbar-link>
-                <x-navbar.navbar-link href="/submission" :active="request()->is('submission.create')">Submit</x-navbar.navbar-link>
+                <x-dashboardlink.simulationlink href="/simulation" :active="request()->is('simulation')">Simulations</x-dashboardlink.simulationlink>
+                <x-navbar.navbar-link href="/assessment" :active="request()->is('assessment')"> Assessments</x-navbar.navbar-link>
+                <x-navbar.navbar-link href="/submission" :active="request()->is('submission.create')">Submit Questions</x-navbar.navbar-link>
             </div>
             <div class="mobilemenu2">
                 @auth
@@ -78,7 +78,7 @@
                 </div>
                 @else
                 <div class="flex items-center px-5">
-                    <x-navbar.navbar-link href="/loginregis">Login/Register</x-navbar.navbar-link>
+                    <x-navbar.navbar-link href="/loginregis">Login</x-navbar.navbar-link>
                 </div>
                 @endauth
             </div>

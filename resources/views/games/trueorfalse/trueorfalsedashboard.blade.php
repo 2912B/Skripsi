@@ -16,7 +16,7 @@
     <div class="row">
         <div class="col-md-4 m-2">
             <x-dashboardlink.link href="/games/trueorfalse/password-security" :active="request()->is('/games/trueorfalse/password-security')">
-                <div class="feature-icon">🎮</div>
+                <div class="feature-icon" style="display: flex; justify-content: center; align-items: center;"><img src="{{ asset('img/icongames.png') }}" alt="Game Icon"></div>
                 <div class="card-body">
                     <h5 class="card-title">Password Security</h5>
                 </div>
@@ -25,7 +25,7 @@
 
         <div class="col-md-4 m-2">
             <x-dashboardlink.link href="/games/trueorfalse/social-engineering" :active="request()->is('/games/trueorfalse/social-engineering')">
-                <div class="feature-icon">🎮</div>
+                <div class="feature-icon" style="display: flex; justify-content: center; align-items: center;"><img src="{{ asset('img/icongames.png') }}" alt="Game Icon"></div>
                 <div class="card-body">
                     <h5 class="card-title">Social Engineering</h5>
                 </div>
@@ -34,7 +34,7 @@
 
         <div class="col-md-4 m-2">
             <x-dashboardlink.link href="/games/trueorfalse/phishing" :active="request()->is('/games/trueorfalse/phishing')">
-                <div class="feature-icon">🎮</div>
+                <div class="feature-icon" style="display: flex; justify-content: center; align-items: center;"><img src="{{ asset('img/icongames.png') }}" alt="Game Icon"></div>
                 <div class="card-body">
                     <h5 class="card-title">Phishing</h5>
                 </div>

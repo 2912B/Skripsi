@@ -16,7 +16,7 @@
     <div class="row">
         <div class="col-md-4 m-2">
             <x-dashboardlink.link href="/games/bestscenario/incident-response" :active="request()->is('/games/bestscenario/incident-response')">
-                <div class="feature-icon">🎮</div>
+                <div class="feature-icon" style="display: flex; justify-content: center; align-items: center;"><img src="{{ asset('img/icongames.png') }}" alt="Game Icon"></div>
                 <div class="card-body">
                     <h5 class="card-title">Incident Response</h5>
                 </div>
@@ -25,7 +25,7 @@
 
         <div class="col-md-4 m-2">
             <x-dashboardlink.link href="/games/bestscenario/device-security" :active="request()->is('/games/bestscenario/device-security')">
-                <div class="feature-icon">🎮</div>
+                <div class="feature-icon" style="display: flex; justify-content: center; align-items: center;"><img src="{{ asset('img/icongames.png') }}" alt="Game Icon"></div>
                 <div class="card-body">
                     <h5 class="card-title">Device Security</h5>
                 </div>
@@ -34,7 +34,7 @@
 
         <div class="col-md-4 m-2">
             <x-dashboardlink.link href="/games/bestscenario/workplace-security" :active="request()->is('/games/bestscenario/workplace-security')">
-                <div class="feature-icon">🎮</div>
+                <div class="feature-icon" style="display: flex; justify-content: center; align-items: center;"><img src="{{ asset('img/icongames.png') }}" alt="Game Icon"></div>
                 <div class="card-body">
                     <h5 class="card-title">Workplace Security</h5>
                 </div>

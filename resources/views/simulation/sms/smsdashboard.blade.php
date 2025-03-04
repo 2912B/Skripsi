@@ -26,7 +26,7 @@
                     href="{{ url('/simulation/message/' . $level) }}"
                     :active="request()->is('/simulation/message/' . $level)"
                 >
-                    <div class="feature-icon-sim">📦</div>
+                    <div class="feature-icon" style="display: flex; justify-content: center; align-items: center;"><img src="{{ asset('img/iconsimulation.png') }}" alt="Game Icon"></div>
                     <div class="card-body-sim">
                         <h5 class="card-title-sim">Level {{ $level }}</h5>
                     </div>
